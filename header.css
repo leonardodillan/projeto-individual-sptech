@@ -31,7 +31,6 @@
     opacity: 0;
     transform: translateY(-100%);
     animation: top-down 1.5s forwards;
-    color: black;
 }
 
 .menu {

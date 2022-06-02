@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="teste.css">
+</head>
+<body>
+
+    <div class="container">
+
+
+        <div class="nav">
+            <div class="menu" onclick="openNav()">
+                <div class="hamburger"></div>
+            </div>
+            <div class="logo">
+                THEYUNG
+            </div>
+            <div class="cart">
+                <i class='bx bx-cart-alt'></i>
+            </div>
+        </div>
+        <div id="myNav" class="nav-overlay">
+            <div class="nav-overlay-content">
+                
+                <a href="#">Sobre mim</a>
+                <a href="#">Notícias</a>
+                <a href="#">Login</a>
+                <a href="#">Cadastro</a>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="img-top">
+                <img src="static/images/bastados cine.jpg" alt="">
+            </div>
+            <div class="text-content">
+                <h1>A magia do <span class="txt-red">cinema</span></h1>
+                <h2>O que é tão legal no cinema?</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium delectus voluptatibus eveniet vero et sequi enim reiciendis perspiciatis id aliquid, quam aliquam officiis suscipit odit consequatur tenetur, neque ipsam quasi! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est quo porro et quia sequi error sunt. Consectetur est nisi repudiandae sint illum rerum corporis, enim praesentium quod temporibus impedit dolorem.</p>
+                <div class="img">
+                    <img src="static/images/dont be.gif" alt="">
+                </div>
+                <h2>Minha nossa nossa nossa...</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor quos temporibus veniam, vero sed eligendi, sequi molestiae vitae unde, voluptatem ullam incidunt? Quibusdam, maxime dolorum itaque ipsam ea repudiandae iusto.<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam rerum maxime quos suscipit accusamus voluptas aperiam perspiciatis ratione. Nulla aperiam quod adipisci eveniet ipsa in iusto quis minima beatae velit?</p>
+            </div>
+        </div>
+
+
+    </div>
+
+</body>
+</html>
+
+<script>
+    openNav = () => {
+    let nav = document.querySelector('.nav-overlay')
+    let hamb = document.querySelector('.hamburger')
+    nav.classList.toggle('active')
+    hamb.classList.toggle('active')
+}
+</script>

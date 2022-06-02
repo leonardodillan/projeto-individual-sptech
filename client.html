@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THEYUNG</title>
+    <link rel="stylesheet" href="client.css">
+    <!-- Icons -->
+    <script src="https://kit.fontawesome.com/6a11db41ff.js"></script>
+</head>
+<body>
+    
+    <!-- Botão Para começar o quiz -->
+    <div class="start-btn">
+        <button>Start Quiz</button>
+    </div>
+
+    <!-- Info Box -->
+    <div class="info_box">
+        <div class="info_title">
+            <span>Algumas Regras do Quiz</span>
+        </div>
+        <div class="info_list">
+
+            <div class="info">1. Você tem apenas <span>15 segundos</span> para cada questão</div>
+            <div class="info">2. Assim que selecionar uma opção, não poderá escolher outra</div>
+            <div class="info">3. Se o tempo acabar, não conseguirá selecionar nenhuma opção</div>
+            <div class="info">4. Você não pode sair do Quiz enquanto estiver jogando</div>
+            <div class="info">5. Você ganhará pontos pela respostas corretas</div>
+           
+        </div>
+        <div class="buttons">
+            <button class="quit">Sair</button>
+            <button class="restart">Continuar</button>
+        </div>
+    </div>
+
+    <!-- Quiz Box -->
+    <div class="quiz_box">
+        <!-- Nesse ponto colocar a header padrão -->
+        <header>
+            <div class="title">Quiz de cinema</div>
+            <div class="timer">
+                <div class="time_text">Tempo:</div>
+                <div class="timer_sec">15</div>
+            </div>
+        </header>
+        <section>
+
+            <div class="que_text">
+                <!-- <span>Quantos filmes tem a saga O Poderoso Chefão?</span> -->
+            </div>
+            <div class="option_list">
+                <!-- <div class="option">
+                    <span>3</span>
+                    <div class="icon tick"><i class="fas fa-check"></i></div>
+                </div>
+                <div class="option">
+                    <span>2</span>
+                    <div class="icon cross"><i class="fas fa-times"></i></div>
+                </div>
+                <div class="option">
+                    <span>1</span>                    
+                </div>
+                <div class="option">
+                    <span>4</span>
+                </div> -->
+            </div>
+
+        </section>
+
+        <footer>
+            <div class="total_que">
+                <span><p>2</p>de<p>5</p> Perguntas</span>
+            </div>
+            <button class="next_btn">Próximo</button>
+        </footer>
+    </div>
+
+    <!-- Resultado -->
+
+    <div class="result_box">
+        <div class="icon">
+            <i class="fas fa-crown"></i>
+        </div>
+        <div class="complete_text">Você completou o Quiz!</div>
+        <div class="score_text">
+            <span>desculpa, Mas você acertou apenas <p>2</p> de <p>5</p></span>
+        </div>
+        <div class="buttons">
+            <button class="restart">Replay Quiz</button>
+            <button class="quit">Quit Quiz</button>
+        </div>
+    </div>
+
+    <script src="static/js/client.js"></script>
+    <script src="static/js/questoes.js"></script>
+
+
+</body>
+</html>

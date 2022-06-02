@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style_about.css">
+    <link rel="stylesheet" href="header.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="container">
+
+        <div class="overlay"></div>
+
+        <div class="nav">
+            <div class="menu" onclick="openNav()">
+                <div class="hamburger"></div>
+            </div>
+            <div class="logo">
+                THEYUNG
+            </div>
+            <div class="cart">
+                <i class='bx bx-cart-alt'></i>
+            </div>
+        </div>
+
+        <div id="myNav" class="nav-overlay">
+            <div class="nav-overlay-content">
+                
+                <a href="#">Sobre mim</a>
+                <a href="#">Notícias</a>
+                <a href="login.html">Login</a>
+                <a href="#">Cadastro</a>
+            </div>
+        </div>
+
+
+        <div class="content">
+            <h2>Leonardo <span class="txt-red">Dillan</span></h2>
+
+            <div class="circle">
+                
+            </div>
+
+            <div class="text-bottom">
+                
+                Meu nome é Leonardo Dillan, e tenho 22 anos. Desde sempre gostei de filmes, sendo meu gênero favorito Suspense. Acredito que Harry Potter é melhor que Senhor dos Anéis
+            </div>
+            <div class="favorite">
+                <h3>Filmes favoritos</h3>
+                <ol>
+                    <li><span>Clube da Luta</span></li>
+                    <li><span>8 Mile</span></li>
+                    <li><span>Pulp Fiction</span></li>
+                    <li><span>Taxi Driver</span></li>
+                    <li><span>Doze Homens e Um Segredo</span></li>
+                </ol>
+            </div>
+            <div class="social-media">
+                <div class="rede">
+                    <a href=""><i class='bx bxl-twitter'></i></a>
+                </div>
+                <div class="rede">
+                    <a href=""><i class='bx bxl-instagram' ></i></a>
+                </div>
+                <div class="rede">
+                    <a href=""><i class='bx bxl-facebook' ></i></a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+</html>
+<script>
+    openNav = () => {
+    let nav = document.querySelector('.nav-overlay')
+    let hamb = document.querySelector('.hamburger')
+    nav.classList.toggle('active')
+    hamb.classList.toggle('active')
+}
+</script>
