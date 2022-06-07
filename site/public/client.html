@@ -1,0 +1,216 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>THEYUNG</title>
+    <link rel="stylesheet" href="css/client.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <!-- Icons -->
+    <script src="https://kit.fontawesome.com/6a11db41ff.js"></script>
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script src="js/funcoes.js"></script>
+    <link
+      rel="shortcut icon"
+      href="assets/imgs/icons.jpg"
+      type="image/x-icon"
+    />
+
+    <script
+      type="text/javascript"
+      src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"
+    ></script>
+  </head>
+  <body onload="validarSessao()">
+
+    <div class="nav">
+      <div class="menu" onclick="openNav()">
+        <div class="hamburger"></div>
+      </div>
+      <div class="logo">THEYUNG</div>
+      <div class="cart">
+        <i onclick="limparSessao()" class="bx bx-exit" style="color: white"></i>
+      </div>
+    </div>
+
+    <div id="myNav" class="nav-overlay">
+      <div class="nav-overlay-content">
+        <a href="index.html">Home</a>
+        <a href="cinema.html">Cinema</a>
+        <a href="sobre-mim.html">Sobre mim</a>
+        <a href="login.html">Login</a>
+        <a href="cadastro.html">Cadastro</a>
+      </div>
+    </div>
+
+    <!-- Botão Para começar o quiz -->
+    <div class="start-btn">
+      <button>Iniciar Quiz</button>
+    </div>
+
+    <!-- Info Box -->
+    <div class="info_box">
+      <div class="info_title">
+        <span>Algumas Regras do Quiz</span>
+      </div>
+      <div class="info_list">
+        <div class="info">
+          1. Você tem apenas <span>15 segundos</span> para cada questão
+        </div>
+        <div class="info">
+          2. Assim que selecionar uma opção, não poderá escolher outra
+        </div>
+        <div class="info">
+          3. Se o tempo acabar, não conseguirá selecionar nenhuma opção
+        </div>
+        <div class="info">
+          4. Você não pode sair do Quiz enquanto estiver jogando
+        </div>
+        <div class="info">5. Você ganhará pontos pela respostas corretas</div>
+      </div>
+      <div class="buttons">
+        <button class="quit">Sair</button>
+        <button class="restart">Continuar</button>
+      </div>
+    </div>
+
+    <!-- Quiz Box -->
+    <div class="quiz_box">
+      <!-- Nesse ponto colocar a header padrão -->
+      <header>
+        <div class="title">Quiz de cinema</div>
+        <div class="timer">
+          <div class="time_text">Tempo:</div>
+          <div class="timer_sec">15</div>
+        </div>
+        <div class="time_line"></div>
+      </header>
+      <section>
+        <div class="que_text">
+          <!-- <span>Quantos filmes tem a saga O Poderoso Chefão?</span> -->
+        </div>
+        <div class="option_list">
+          <!-- <div class="option">
+                    <span>3</span>
+                    <div class="icon tick"><i class="fas fa-check"></i></div>
+                </div>
+                <div class="option">
+                    <span>2</span>
+                    <div class="icon cross"><i class="fas fa-times"></i></div>
+                </div>
+                <div class="option">
+                    <span>1</span>                    
+                </div>
+                <div class="option">
+                    <span>4</span>
+                </div> -->
+        </div>
+      </section>
+
+      <footer>
+        <div class="total_que">
+          <!-- <span><p>2</p>de<p>5</p> Perguntas</span> -->
+        </div>
+        <button class="next_btn">Próximo</button>
+      </footer>
+    </div>
+
+    <!-- Resultado -->
+
+    <div class="result_box">
+      <div class="icon">
+        <i class="fas fa-crown"></i>
+      </div>
+      <div class="complete_text">Você completou o Quiz!</div>
+      <div class="score_text">
+        <!-- <span>desculpa, Mas você acertou apenas <p>2</p> de <p>5</p></span> -->
+      </div>
+      <div class="buttons">
+        <button class="restart">Mais uma</button>
+        <button class="quit">Sair</button>
+      </div>
+      <div class="graph">
+        <canvas id="canvas_grafico"></canvas>
+      </div>
+    </div>
+
+    <!-- de onde a partir -->
+    
+
+    <script src="js/client.js"></script>
+    <script src="js/questoes.js"></script>
+  </body>
+</html>
+
+<script>
+ 
+
+  openNav = () => {
+    let nav = document.querySelector(".nav-overlay");
+    let hamb = document.querySelector(".hamburger");
+    nav.classList.toggle("active");
+    hamb.classList.toggle("active");
+  };
+
+  function obterDadosGrafico(idAquario) {
+    fetch(`/medidas/ultimas/${idAquario}`, { cache: "no-store" })
+      .then(function (response) {
+        if (response.status == 200) {
+          response.json().then(function (resposta) {
+            console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+            plotarGrafico(resposta, idAquario);
+          });
+        } else {
+          console.error("Nenhum dado encontrado ou erro na API");
+        }
+      })
+      .catch(function (error) {
+        console.error(
+          `Erro na obtenção dos dados p/ gráfico: ${error.message}`
+        );
+      });
+  }
+
+  function plotarGrafico(resposta, idAquario) {
+    var dados = {
+      labels: [],
+      datasets: [
+        {
+          label: "Acertos",
+          borderColor: "#32B9CD",
+          backgroundColor: "#32b9cd8f",
+          data: [],
+        },
+      ],
+    };
+
+    for (i = 0; i < resposta.length; i++) {
+      var registro = resposta[i];
+      dados.labels.push(registro.nome);
+      dados.datasets[0].data.push(registro.pontuacao);
+    }
+
+    var ctx = canvas_grafico.getContext("2d");
+    window.grafico_linha = new Chart(ctx, {
+      type: "bar",
+      data: dados,
+      options: {
+        scales: {
+          yAxes: [
+            {
+              ticks: {
+                beginAtZero: true,
+              },
+            },
+          ],
+        },
+      },
+    });
+  }
+</script>

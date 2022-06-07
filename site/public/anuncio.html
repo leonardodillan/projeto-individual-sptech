@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THEYUNG</title>
+    <link rel="stylesheet" href="css/anuncio.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="shortcut icon" href="assets/imgs/icons.jpg" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+
+        <div class="headder">
+            <div class="nav">
+                <div class="menu" onclick="openNav()">
+                    <div class="hamburger"></div>
+                </div>
+                <div class="logo">
+                    THEYUNG
+                </div>
+                <div class="cart">
+                    <i class='bx bx-cart-alt'></i>
+                </div>
+            </div>
+            <div id="myNav" class="nav-overlay">
+                <div class="nav-overlay-content">
+                    
+                    <a href="index.html">Home</a>
+                <a href="sobre-mim.html">Sobre mim</a>
+                <a href="login.html">Login</a>
+                <a href="cadastro.html">Cadastro</a>
+                </div>
+            </div>
+        </div>
+        <div class="fashion">
+            DILLAN
+        </div>
+        <div class="anuncio">
+            <div class="left">
+                
+                    Você acha que conhece bastante sobre filmes?<br>
+                    <div class="red">
+                        Participe do nosso quiz e tente acertar o maior número de perguntas
+                    </div>
+                    Faça login para participar
+                <a href="login.html">clique aqui</a>
+                
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
+
+<script>
+    openNav = () => {
+    let nav = document.querySelector('.nav-overlay')
+    let hamb = document.querySelector('.hamburger')
+    nav.classList.toggle('active')
+    hamb.classList.toggle('active')
+}
+</script>

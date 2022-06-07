@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | THEYUNG</title>
+    <link rel="stylesheet" href="css/style_login.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="shortcut icon" href="assets/imgs/icons.jpg" type="image/x-icon">
+
+    <script src="./js/funcoes.js"></script>
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="nav">
+            <div class="menu" onclick="openNav()">
+                <div class="hamburger"></div>
+            </div>
+            <div class="logo">
+                THEYUNG COMPANY
+            </div>
+            <div class="cart">
+                <i class='bx bx-cart-alt'></i>
+            </div>
+        </div>
+        <div id="myNav" class="nav-overlay">
+            <div class="nav-overlay-content">
+                
+                <a href="index.html">Home</a>
+                <a href="sobre-mim.html">Sobre mim</a>
+                <a href="login.html">Login</a>
+                <a href="cadastro.html">Cadastro</a>
+            </div>
+        </div>
+        <div class="left">
+            <div class="filtro"></div>
+        </div>
+        <div class="right">
+            
+            <h1>Seja bem-vindo!<br><div class="txt-red">Faça seu login</div></h1>
+            <form>
+                <div class="quest">
+                    <span>Login:</span>
+                    <input id="email_input" type="text" placeholder="Login...">
+                </div>
+                <div class="quest">
+                    <span>Senha:</span>
+                    <input id="senha_input" type="password" placeholder="Senha...">
+                </div>
+                <a href="cadastro.html">Não possui acesso? Clique aqui</a>
+                <a class="bt_login" onclick="entrar()">Login</a>
+                
+            </form>
+        </div>
+        <div class="logo-lateral">
+            DILLAN
+        </div>
+    </div>
+    
+</body>
+<script src="js/login.js"></script>
+</html>
+<script>
+    openNav = () => {
+    let nav = document.querySelector('.nav-overlay')
+    let hamb = document.querySelector('.hamburger')
+    nav.classList.toggle('active')
+    hamb.classList.toggle('active')
+}
+</script>
